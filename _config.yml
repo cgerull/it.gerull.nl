@@ -10,7 +10,7 @@ exclude:
   - vendor/
   - vnu/
   - vnu.zip
-layouts: ./_noita
+layouts_dir: ./_noita
 sass:
   sass_dir: noita/_scss
   style: compressed
@@ -23,11 +23,12 @@ compress_html:
     envs: [travis]
 # theme
 noita:
-  name: Noita
-  description: Jekyll theme built with Foundation
+  name: it.gerull.nl
+  title: ITnerary
+  description: A static blog where I keep my cheatsheet, recipes and information about procedures and tips. In short, my route through Information Technology.
   author:
-    name: Anatol Broder
-    url: http://penibelst.de/
+    name: Claus Gerull
+    url: http://www.gerull.nl/
   lang: en
   favicons:
     - /assets/2014/04/21/favicon-152.png
@@ -36,10 +37,10 @@ noita:
     right:
       - name: About
         url: /about/
-      - name: Guide
-        url: /guide/
+      # - name: Guide
+      #   url: /guide/
       - name: Blog
         url: /blog/
-      - name: Repository
-        url: https://github.com/penibelst/jekyll-noita
-        class: small button
+    #  button - name: Repository
+    #     url: https://github.com/penibelst/jekyll-noita
+    #     class: small 
