@@ -1,6 +1,7 @@
 ---
 layout: post
 title: HA Proxy as a reverse ssh proxy
+description: "Configure haproxy to act as reverse proxy for ssh."
 tags:
   - Proxy
   - SSH

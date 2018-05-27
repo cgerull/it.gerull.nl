@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Shrink logic volume
+title: Shrink logic volumes
+description: "Use LVM2 to shrink volumes on the fly."
 tags:
   - File System
   - Install

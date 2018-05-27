@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Volume layout
+description: Linux FHS with LVM2
 tags:
   - File System
   - Installation

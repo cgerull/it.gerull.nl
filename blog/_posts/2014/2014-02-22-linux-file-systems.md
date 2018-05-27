@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Linux File System
+description: My implementation of Linux FHS
 tags:
   - File System
   - Install

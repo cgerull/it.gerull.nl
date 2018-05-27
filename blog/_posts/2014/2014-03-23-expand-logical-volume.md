@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Expand logic volume
+title: Expand logic volumes
+description: "Use LVM2 to expand volumes on the fly."
 tags:
   - File System
   - Install
