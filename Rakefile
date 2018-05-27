@@ -16,8 +16,9 @@ task :test => [:validate, :proof]
 
 desc "Test the site with Proofer"
 task :proof => BUILD_DIR do
-  require "html/proofer"
-  HTML::Proofer.new(BUILD_DIR).run
+  require "html-proofer"
+  options = { :assume_extension => true }
+  HTMLProofer.check_directory("./_site", options).run
 end
 
 VALIDATOR = "vnu/vnu.jar"
