@@ -1,4 +1,5 @@
-# Jira installation / upgrade procedure
+
+# Jira recipe
 
 This instruction assumes that Jira is installed in /opt/jira and the data directory is /var/jira.
 
@@ -7,7 +8,7 @@ Check if the requirements in the supported platforms are met.
 
 Please read the release notes, adjust the version number in the URL.
 
-Download binary Jira from Atlassian (replace the JIRA version with the required one). Go to the Jira download page to find the correct version.
+Download binary Jira from Atlassian (replace the JIRA version with the required one). Go to the [Jira download page](https://www.atlassian.com/software/jira/download) to find the correct version.
 
 ```
 cd /opt/download
