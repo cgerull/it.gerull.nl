@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Confluence upgrade
+title: Confluence recipe
 description: "Steps to install / upgrade Confluence."
 tag: Confluence Atlassian
 category: Atlassian
 date: 2018-12-18 08:13:17
 ---
-# Confluence upgrade
+# Confluence recipe
 
 This instructions assume that Confluence is installed in /opt/confluence and the data directory is /var/confluence.
 
