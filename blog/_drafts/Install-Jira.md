@@ -1,4 +1,11 @@
-
+---
+layout: post
+title: Jira recipe
+description: "Install or upgrade Atlassian Jira."
+tag: Jira Atlassian
+category: Atlassian
+date: 2018-12-16 017:37:10
+---
 # Jira recipe
 
 This instruction assumes that Jira is installed in /opt/jira and the data directory is /var/jira.
