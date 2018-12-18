@@ -1,8 +1,18 @@
+---
+layout: post
+title: Confluence upgrade
+description: "Steps to install / upgrade Confluence."
+tag: Confluence Atlassian
+category: Atlassian
+date: 2018-12-18 08:13:17
+---
 # Confluence upgrade
+
+This instructions assume that Confluence is installed in /opt/confluence and the data directory is /var/confluence.
 
 ## Preparation
 
-- [ ] upgrade / install PostgreSql 9.3.x
+- [ ] upgrade / install database
 - [ ] remove stale installers and backups
 - [ ] check diskspace, /opt needs at least 900MB free space
 - [ ] check if the license is valid
@@ -34,20 +44,19 @@ CATALINA_OPTS="-Dhttp.nonProxyHosts=localhost\|127.0.0.1\|*.<domain>\|*.<domain>
 ```
 
 - When behind Apache with mod_jk, add AJP to /opt/confluence/conf/server.xml or uncomment if avaiable
+- Set permissons to <confluenceuser>.<confluencegroup> for /opt/confluence and /var/confluence and their subdirectories
+- Start the server
+- View the logfile and check upgrade / startup errors (tail f /var/confluence/logs/atlassian-confluence.log)
+- Update plugins
+- Run support tools -> instance health check
 
 ## Important
 
 Add the AJS connector only after the default http connector (port 8080 or 8090) otherwise the syncrony process will break.
 
-
 ```
 <Connector port="8009" enableLookups="false" redirectPort="8443" protocol="AJP/1.3" URIEncoding="UTF-8"/>
 ```
-
-set permissons to <confluenceuser>.<confluencegroup> for /opt/confluence and /var/confluence and their subdirectories
-start the server
-
-View the logfile and check upgrade / startup errors (tail f /var/confluence/logs/atlassian-confluence.log)
 
 ## Crowd connection
 
@@ -55,9 +64,9 @@ If the connection with crowd is broken you will see connection errors in the log
 
 To re-configure the connection follow these steps:
 
-login as local admin
-test, and if necessary reconfigure, crowd
-sync crowd
-login as AD user
-update plugins
-run support tools -> instance health check
+1) login as local admin
+1) test, and if necessary reconfigure, crowd
+1) sync crowd
+1) login as LDAP user
+
+
