@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I maintain this site as place to store cheat sheets, procedures and descriptions. Some of them I use so seldom that it's not worthwhile to memorize them. Other's are explainations I use for customers and are interesting enough to share.
+I maintain this site as place to store cheat sheets, procedures and descriptions. Some of them I use so seldom that it's not worthwhile to memorize them. Other's are explainations I use for customers and are interesting enough to share. In short, you can read this site as an itinerary of my travels through Information Technology.
 
 Publishing them all in a public place will help others too.
 
