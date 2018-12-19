@@ -32,12 +32,12 @@ chmod u+x atlassian-jira-software-M.m.p-x64.bin
 
 ### Perform these steps
 
-- [ ] If on a virtual host, take a snapshot of VM
-- [ ] If upgrading, check if last backup was succesfull ls -l /var/pgbackup
-- [ ] In the Add-ons section upgrade all plugins
-- [ ] Then do the Jira upgrade test
-- [ ] Perform a reindex
-- [ ] Run an integrity check
+- If on a virtual host, take a snapshot of VM
+- If upgrading, check if last backup was succesfull ls -l /var/pgbackup
+- In the Add-ons section upgrade all plugins
+- Then do the Jira upgrade test
+- Perform a reindex
+- Run an integrity check
 
 ## Upgrade / Install
 
