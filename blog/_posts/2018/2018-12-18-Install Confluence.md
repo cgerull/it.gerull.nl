@@ -42,7 +42,6 @@ CATALINA_OPTS="-Dhttp.proxyHost=<http-proxy> -Dhttp.proxyPort=8080 ${CATALINA_OP
 CATALINA_OPTS="-Dhttps.proxyHost=<https-proxy> -Dhttps.proxyPort=8080 ${CATALINA_OPTS}"
 CATALINA_OPTS="-Dhttp.nonProxyHosts=localhost\|127.0.0.1\|*.<domain>\|*.<domain>\|*.<domain> ${CATALINA_OPTS}"
 ```
-
 - When behind Apache with mod_jk, add AJP to `/opt/confluence/conf/server.xml` or uncomment if avaiable
 - Set permissons to `<confluenceuser>.<confluencegroup>` for `/opt/confluence` and `/var/confluence` and their subdirectories
 - Start the server
