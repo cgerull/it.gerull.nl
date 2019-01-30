@@ -8,7 +8,7 @@ date: 2018-12-18 08:13:17
 ---
 # Confluence recipe
 
-This instructions assume that Confluence is installed in /opt/confluence and the data directory is /var/confluence.
+This instructions assume that Confluence is installed in `/opt/confluence` and the data directory is `/var/confluence`.
 
 ## Preparation
 
@@ -34,19 +34,18 @@ sudo chmod +x atlassian-confluence-<version>-x64.bin
 
 - check local admin account, reset password if necessary
 - stop the server
-- execute /opt/downloads/atlassian-confluence-5.9.6-x64.bin
-- if behind a proxy then add proxy configuration to /opt/confluence/bin/setenv.sh
+- execute `/opt/downloads/atlassian-confluence-5.9.6-x64.bin`
+- if behind a proxy then add proxy configuration to `/opt/confluence/bin/setenv.sh`
 
 ```
 CATALINA_OPTS="-Dhttp.proxyHost=<http-proxy> -Dhttp.proxyPort=8080 ${CATALINA_OPTS}"
 CATALINA_OPTS="-Dhttps.proxyHost=<https-proxy> -Dhttps.proxyPort=8080 ${CATALINA_OPTS}"
 CATALINA_OPTS="-Dhttp.nonProxyHosts=localhost\|127.0.0.1\|*.<domain>\|*.<domain>\|*.<domain> ${CATALINA_OPTS}"
 ```
-
-- When behind Apache with mod_jk, add AJP to /opt/confluence/conf/server.xml or uncomment if avaiable
-- Set permissons to <confluenceuser>.<confluencegroup> for /opt/confluence and /var/confluence and their subdirectories
+- When behind Apache with mod_jk, add AJP to `/opt/confluence/conf/server.xml` or uncomment if avaiable
+- Set permissons to `<confluenceuser>.<confluencegroup>` for `/opt/confluence` and `/var/confluence` and their subdirectories
 - Start the server
-- View the logfile and check upgrade / startup errors (tail f /var/confluence/logs/atlassian-confluence.log)
+- View the logfile and check upgrade / startup errors (`tail -f /var/confluence/logs/atlassian-confluence.log`)
 - Update plugins
 - Run support tools -> instance health check
 
