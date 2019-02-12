@@ -1,14 +1,16 @@
 ---
 layout: post
 title: Jira recipe
-description: "Install or upgrade Atlassian Jira."
+description: "Install or upgrade Atlassian Jira with the binary installer on Linux."
 tag: Jira Atlassian
 category: Atlassian
 date: 2018-12-16 017:37:10
 ---
-# Jira recipe
 
-This instruction assumes that Jira is installed in `/opt/jira` and the data directory is `/var/jira`.
+
+This instruction assumes that Jira is installed in `/opt/jira` and the data directory is `/var/jira`. The 
+installation is on Ubuntu Linux but should also work on other flavours of Linux.
+Jira requires a supported database, in this instruction I assume that the database is already configured.
 
 ## Prepration
 
