@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Reorganize physical volumes
-description: "Steps to reorganize LVM disks."
+description: "A guide to reorganize Linux LVM disks."
 tag: linux lvm partitions
 category: Linux
 date: 2019-01-10 08:13:17
 ---
-# Reorganize physical volumes
 
-These description is written for Ubuntu Linux. With a bit of cfreativity it should also work for other Linux flavours.
+
+These description is written for Ubuntu Linux. With a bit of creativity it should also work for other Linux flavours.
 
 
 > For all resize operations it is mandatory to stop running applications. Most reduce operations expect unmounted filesystems too.
