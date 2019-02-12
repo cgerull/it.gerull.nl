@@ -12,7 +12,7 @@ This instruction assumes that Jira is installed in `/opt/jira` and the data dire
 installation is on Ubuntu Linux but should also work on other flavours of Linux.
 Jira requires a supported database, in this instruction I assume that the database is already configured.
 
-## Prepration
+## Preparation
 
 Check if the requirements in the supported platforms are met.
 
