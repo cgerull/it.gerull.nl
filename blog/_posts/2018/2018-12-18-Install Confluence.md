@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Confluence recipe
-description: "Steps to install / upgrade Confluence."
+description: "Steps to install / upgrade Confluence with the Atlassian bin installer on Linux."
 tag: Confluence Atlassian
 category: Atlassian
 date: 2018-12-18 08:13:17
 ---
-# Confluence recipe
+
 
 This instructions assume that Confluence is installed in `/opt/confluence` and the data directory is `/var/confluence`.
 
