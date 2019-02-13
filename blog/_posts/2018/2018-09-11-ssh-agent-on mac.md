@@ -11,7 +11,7 @@ I ran into "ssh_askpass: exec(/usr/X11R6/bin/ssh-askpass): No such file or direc
 
 (My) Solution is to create a SSH agent in my .bashrc. Now the passphrase in my keychain will be used during Git operations.
 
-#### ~/.ssh/config
+## Edit  ~/.ssh/config
 
 First create / edit the ~/.ssh/config file and add the following settings.
 
@@ -22,7 +22,7 @@ Host *
  IdentityFile ~/.ssh/id_rsa
 ```
 
-#### ~/.bashrc
+## Edit ~/.bashrc
 
 Then add this section to your ~/.bashrc
 
