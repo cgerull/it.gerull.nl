@@ -12,6 +12,6 @@ Publishing them all in a public place will help others too.
 Living and working in the Netherlands, I'm in the IT over 30 years now. Currently my job is a consultant for development tooling with GitHub and the Atlassian suite of tools as speciality. But in the past I was involved with many aspects from technical enginering to development.
 
 
-This site use Noita and is inspired by the [Demo site](http://noita.penibelst.de) from [Anatol Broder](https://anatol.penibelst.de).
+This site use Noita and is inspired by the [Demo site](http://noita.penibelst.de) from [Anatol Broder](https://bro.doktorbro.net).
 
 Noita is a [Jekyll][0] theme built with the responsive front-end framework [Foundation][1]. The theme is free and fully compatible with [Github Pages][2].
