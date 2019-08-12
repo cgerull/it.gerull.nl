@@ -88,7 +88,13 @@ domain=<domain name>
 # folder to mount = `provisioning`
 # mount options = `-fstype=cifs,credentials=/home/vagrant/.secret`
 # share URL = `://NLDT-11695/provisioning`
-provisioning   -fstype=cifs,credentials=/home/vagrant/.secret    ://NLDT-11695/provisioning
+#
+# Eventually add these options as well:
+# sec=ntlmv2
+# uid=<username or UID>
+# gid=<groupname or GID>
+# vers=1.0  Set SMB version to 1.0 if Kernel > 4.13
+provisioning   -fstype=cifs,rw,credentials=/home/vagrant/.secret    ://NLDT-11695/provisioning
 ```
 
 ## Running
