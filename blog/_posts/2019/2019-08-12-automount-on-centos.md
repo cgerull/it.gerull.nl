@@ -90,6 +90,7 @@ domain=<domain name>
 # share URL = `://NLDT-11695/provisioning`
 provisioning   -fstype=cifs,credentials=/home/vagrant/.secret    ://NLDT-11695/provisioning
 ```
+
 ## Running
 
 Start the autofs daemon with `systemctl start autofs`
