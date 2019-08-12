@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Install and configure automaount on CentOS 7
-description: "Notes on autofs on RH family Linux."
+title: Install and configure automount on CentOS 7
+description: "Notes on autofs for RH family Linux."
 tag: Centos Linux
 category: Linux
-date: 2019-07-12 10:13:17
+date: 2019-08-12 10:13:17
 ---
 
 ## Prerequisities
