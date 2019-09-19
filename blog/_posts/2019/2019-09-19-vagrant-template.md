@@ -3,10 +3,9 @@ layout: post
 title: Vagrant template
 description: "Install and run a virtual machine on your host."
 tag: Linux Vagrant VirtualBox
-category:Linux
+category: Linux
 date: 2019-09-19 07:13:17
 ---
-
 
 
 Install and run a virtual machine on your host
