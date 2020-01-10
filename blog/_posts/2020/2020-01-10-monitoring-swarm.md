@@ -1,3 +1,11 @@
+---
+layout: post
+title: Monitoring Docker Swarm
+description: "Test setup and template for docker monitoring with Prometheus and Grafana."
+tag: Docker Grafana Prometheus
+category: DevOps 
+date: 2020-01-10 14:13:17
+---
 
 
 ## Docker Compose
