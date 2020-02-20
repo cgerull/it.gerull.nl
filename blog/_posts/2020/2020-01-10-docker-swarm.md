@@ -15,6 +15,9 @@ network that will interfere with any existing network segments on your site.
 
 ```json
 {
+   "insecure-registries":[],
+   "live-restore": false,
+   "userland-proxy": false,
    "default-address-pools":[
 	{"base":"172.100.0.0/16","size":24}
    ]
