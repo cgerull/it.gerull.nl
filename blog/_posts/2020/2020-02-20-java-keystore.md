@@ -4,7 +4,7 @@ title: Java keystore
 description: "Get and add a root certificate to the java keystore."
 tag: Java SSL
 category: DevOps 
-date: 2020-01-10 14:13:17
+date: 2020-02-20 18:01:00
 ---
 
 
