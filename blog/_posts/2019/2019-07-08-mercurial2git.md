@@ -11,10 +11,6 @@ Please follow the excellent description on the [Git documentation](https://git-s
 
 Here are some personal additions.
 
-At the time of writing fast-export has a bug in v190107. An [issue](https://github.com/frej/fast-export/issues/132) is created.
-
-The described workaround works for me as well.
-
 My setup is:
 
 - CentOS Linux release 7.6.1810 (Core)
