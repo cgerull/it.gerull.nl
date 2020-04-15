@@ -22,7 +22,6 @@ sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > private-local.crt
 Alternative you can use your Firefox or Chrome web browser to get the certificate. Click on the lock
 in the URL and follow the browser specific instruction to save the certificate.
 
-
 ## Import the certificate into the keystore
 
 Run the following command from the CLI.
@@ -39,4 +38,3 @@ But if you already installed `git` it's accessible via your `git-bash` shell. Sa
 from the local terminal.
 
 On Linux and MacOS it should be already installed.
-
