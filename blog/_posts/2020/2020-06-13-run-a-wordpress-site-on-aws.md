@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Run a WordPress site on AWS
-description: "Notes on autofs for RH family Linux."
+description: "Setup a WordPress site with Bitnami and Lightsail."
 tag: AWS Wordpress Lightsail
 category: AWS
 date: 2020-06-13 20:13:17
