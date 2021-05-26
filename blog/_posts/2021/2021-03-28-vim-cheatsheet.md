@@ -19,7 +19,7 @@ gi - jump to last edit and switch to insert mode
 gI - insert at the beginning of the line
 gv - go to visual mode and use last selection you made
 
-### My .vimrc
+## My .vimrc
 
 ```vimrc
 " enable filetype detection:
