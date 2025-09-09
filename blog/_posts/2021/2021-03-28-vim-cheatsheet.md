@@ -11,13 +11,13 @@ Listen my favorite Vim shortcuts and commands.
 ## Global commands
 
 ### File handling
-gf - edit file under cursor
-gx - open file under cursor
+- *gf*  edit file under cursor
+- *gx*  open file under cursor
 
 ### Insert and jump
-gi - jump to last edit and switch to insert mode 
-gI - insert at the beginning of the line
-gv - go to visual mode and use last selection you made
+- *gi* jump to last edit and switch to insert mode 
+- *gI* insert at the beginning of the line
+- *gv* go to visual mode and use last selection you made
 
 ## My .vimrc
 
