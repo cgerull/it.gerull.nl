@@ -1,10 +1,10 @@
 ---
 layout: post
-title: VIM cheatsheet
-description: "My personal vi cheatsheet"
-tag: vim vi linux
-category: Linux
-date: 2021-03-28 10:12:23
+title: PostgreSQL pg_dump on Kubernetes
+description: "Examples for pg_dump backups for a PostgreSQL database on Kubernetes."
+tag: kubernetes linux
+category: Kubernetes
+date: 2024-05-10 10:10:23
 ---
 # Simple PostgreSQL backup with pg_dump on Kubernetes
 
