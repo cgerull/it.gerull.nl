@@ -1,12 +1,11 @@
 ---
 layout: post
 title: PostgreSQL pg_dump on Kubernetes
-description: "Examples for pg_dump backups for a PostgreSQL database on Kubernetes."
-tag: kubernetes linux
+description: "Examples for a PostgreSQL database on Kubernetes."
+tag: kubernetes linux postgresql
 category: Kubernetes
 date: 2024-05-10 10:10:23
 ---
-# Simple PostgreSQL backup with pg_dump on Kubernetes
 
 ## PostgreSql alle databases met pg_dumpall
 
@@ -82,7 +81,7 @@ spec:
             volumeMounts:
               - name: datadir
                 mountPath: /backup/pgdump
-                subPath: 
+                subPath:
               - name: empty-dir
                 mountPath: /tmp
                 subPath: tmp-dir
@@ -166,7 +165,7 @@ spec:
           volumeMounts:
             - name: datadir
               mountPath: /backup/pgdump
-              subPath: 
+              subPath:
             - name: empty-dir
               mountPath: /tmp
               subPath: tmp-dir
@@ -187,25 +186,24 @@ spec:
 ```
 
 ### pg_dumpall script
+
 ```bash
 #!/bin/sh
-
 #
 
 PGDUMP_DIR="${BACKUP_DIR:-/backup}"
-
 export PGDUMP_DIR
 
 TS="$(date '+%Y-%m-%d-%H-%M')"
-
 export TS
 
 echo "$(date '+%Y-%m-%d-%H-%M') -- Starting PostgreSql dump of all databases." > "${PGDUMP_DIR}/${TS}"-dump.log
-
-pg_dumpall --clean --if-exists --load-via-partition-root --quote-all-identifiers \
-
---no-password --verbose 2>>"${PGDUMP_DIR}/${TS}"-dump.log | gzip - > "${PGDUMP_DIR}/${TS}"-pg_dumpall.sql.gz \
-
+pg_dumpall --clean \
+  --if-exists \
+  --load-via-partition-root \
+  --quote-all-identifiers \
+  --no-password \
+  --verbose 2>>"${PGDUMP_DIR}/${TS}"-dump.log | gzip - > "${PGDUMP_DIR}/${TS}"-pg_dumpall.sql.gz \
 && echo "$(date '+%Y-%m-%d-%H-%M') -- PostgreSql dump finished." >> "${PGDUMP_DIR}/${TS}"-dump.log
 ```
 
@@ -243,7 +241,9 @@ for DB in $DATABASES; do
     echo "Saving ${TS}-${DB}-dump to MinIO."
     mcli -C /tmp cp "${PGDUMP_DIR}/${TS}-${DB}-dump.log"  "MINIO/${BUCKET_NAME}/${TS}-${DB}-dump.log"
     mcli -C /tmp cp "${PGDUMP_DIR}/${TS}-${DB}.sql.gz"  "MINIO/${BUCKET_NAME}/${TS}-${DB}.sql.gz"
-done```
+done
+```
+
 ## Save to S3 / MinIO
 
 Save pg_dumpall backups to an offsite datastore.
@@ -319,7 +319,7 @@ spec:
             volumeMounts:
             - name: datadir
               mountPath: /backup/pgdump
-              subPath: 
+              subPath:
             - mountPath: /tmp
               name: empty-dir
               subPath: tmp-dir
@@ -439,12 +439,12 @@ spec:
   backupOwnerReference: self
   cluster:
     name: pro-database-02
-    ```
+```
 
-Deze cronjob start zijn beurt deze backup job.
+Deze cronjob maakt en start zijn beurt deze backup job.
 
 ```yaml
-
+---
 apiVersion: postgresql.cnpg.io/v1
 kind: Backup
 metadata:
