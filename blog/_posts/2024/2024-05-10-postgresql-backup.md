@@ -7,7 +7,7 @@ category: Database
 date: 2024-05-10 10:10:23
 ---
 
-## Backup alle databases met pg_dumpall
+## Backup met pg_dumpall
 
 Consistente, logical backup van alle database in het DBMS waarbij afhankelijkheden en constrains bewaard blijven.
 
