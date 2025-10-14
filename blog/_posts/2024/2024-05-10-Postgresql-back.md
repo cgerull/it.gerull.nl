@@ -1,13 +1,13 @@
 ---
 layout: post
-title: PostgreSQL pg_dump on Kubernetes
-description: "Examples for a PostgreSQL database on Kubernetes."
+title: PostgreSQL Backup
+description: "Examples for PostgreSQL backup scripts and jobs."
 tag: kubernetes linux postgresql
-category: Kubernetes
+category: Database
 date: 2024-05-10 10:10:23
 ---
 
-## PostgreSql alle databases met pg_dumpall
+## Backup alle databases met pg_dumpall
 
 Consistente, logical backup van alle database in het DBMS waarbij afhankelijkheden en constrains bewaard blijven.
 
