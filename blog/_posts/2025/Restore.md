@@ -1,0 +1,98 @@
+---
+layout: post
+title: PostgreSql Restore
+description: "Restore PostgreSql vanuit dump files."
+tag: postgresql
+category: Database
+date: 2025-10-14 07:20:23
+---
+
+## PostgreSql vanuit dump files
+
+De postgres pg_dump(all) bestanden bevatten uitvoerbare SQL statements.
+Het restoren bestaat uit het uitvoeren van deze files
+
+```bash
+# Decomprimeren indien nodig
+unzip <pg_dump_bestand.sql.gz>
+
+# Uitvoeren van SQL statements
+psql -h <db-host> -U <superuser> -f <pg_dump_bestand.sql>
+```
+
+De procedure staat uitvoerig beschreven in [[Backup & Restore]]
+## CNPG cluster backup met barman
+
+### Restore via het backup object
+
+Deze methodiek kan gebruikt worden om een restore vanuit een bestaand [[Backup]] object te maken.
+
+```yaml
+# Source: pro-cnpg/templates/cluster.yaml
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster # https://cloudnative-pg.io/documentation/current/cloudnative-pg.v1
+metadata:
+  name: pro-database-02
+spec:
+  imageName: "harbor-gn3.cicd.s15m.nl/ghcr-io-proxy/cloudnative-pg/postgresql:16.2-7"
+  instances: 3 # When using only 1 instance (not high-available), then add  "enablePDB: false", in order to allow pod eviction on (node) maintenance
+  superuserSecret:
+    name: postgresql-user
+...
+  bootstrap:
+    recovery:
+      backup:
+        name: backup-schedule-20240821060000
+...
+  storage:
+    size: 10Gi
+    ```
+### Restore vanuit MinIO objectstore
+
+Met deze methodiek wordt een cluster uit een barman backup vanuit een MinIO store opnieuw opgebouwd.
+
+```yaml
+# Source: pro-cnpg/templates/cluster.yaml
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster # https://cloudnative-pg.io/documentation/current/cloudnative-pg.v1
+metadata:
+  name: pro-database-02
+spec:
+  imageName: "harbor-gn3.cicd.s15m.nl/ghcr-io-proxy/cloudnative-pg/postgresql:16.2-7"
+  instances: 3 # When using only 1 instance (not high-available), then add  "enablePDB: false", in order to allow pod eviction on (node) maintenance
+  superuserSecret:
+    name: postgresql-user
+...
+  bootstrap:
+    recovery:
+      source: clusterBackup
+
+  externalClusters:
+    - name: clusterBackup
+      barmanObjectStore:
+        endpointURL: http://pro-minio-for-cnpg-backups.dpc-oa-pro-minio.svc.cluster.local:9000  # Existing Minio - sp-demo/spri-minio-tst
+      destinationPath: s3://pro-database-02-backups
+      s3Credentials:
+        inheritFromIAMRole: false # Use existing credentials - https://cloudnative-pg.io/documentation/current/api_reference/#s3credentials
+        accessKeyId:
+          key: userName
+          name: minio-user
+        secretAccessKey:
+          key: userPassword
+          name: minio-user
+          wal:
+		    maxParallel: 8
+...
+  storage:
+    size: 10Gi
+```
+
+Bij deze methode wordt standaard de naam van de cluster gebruikt om de map met de barman backups te vinden. Indien dit afwijkt kan de naam expliciet met barmanObjectStore.serverName gespecificeerd worden.
+
+```text
+# bucket layout van voorbeeld MinIO store
+pro-database-02-backups
+|--pro-database-02
+|  |--base
+|  |--wals
+```
