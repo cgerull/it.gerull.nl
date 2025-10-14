@@ -4,7 +4,7 @@ title: PGbench
 description: "PostgreSQL benchmarkings."
 tag: postgresql
 category: Database
-date: 2025-10-14 07:19:23
+date: 2025-10-14 05:19:23
 ---
 ## PGbench
 
